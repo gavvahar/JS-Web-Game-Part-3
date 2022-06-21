@@ -1,11 +1,19 @@
-function move(image, left, bottom) {
+function move(image) {
   image.style.position = "fixed";
-  image.style.left = left + "px";
-  image.style.bottom = bottom + "px";
+
+  function moveToCoordinates(left, bottom) {
+    image.style.left = left + "px";
+    image.style.bottom = bottom + "px";
+  }
+
+  return {
+    to: moveToCoordinates,
+  };
 }
 
 let greenCharacter = newImage("assets/green-character.gif");
-move(greenCharacter, 100, 250);
+let thingThatMoveReturns = move(greenCharacter);
+thingThatMoveReturns.to(300, 300);
 
 function newImage(url, left, bottom) {
   let image = document.createElement("img");
