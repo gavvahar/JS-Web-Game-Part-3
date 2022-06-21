@@ -13,7 +13,7 @@ function move(image) {
 
 let greenCharacter = newImage("assets/green-character.gif");
 let thingThatMoveReturns = move(greenCharacter);
-thingThatMoveReturns.to(300, 300);
+thingThatMoveReturns.to(100, 250);
 
 function newImage(url, left, bottom) {
   let image = document.createElement("img");
